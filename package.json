@@ -1,5 +1,5 @@
 {
-  "name": "wx-mini-program-event",
+  "name": "sx-event",
   "version": "1.0.0",
   "description": "",
   "main": "main.js",
@@ -8,12 +8,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/sunxi1997/wx-mini-program-event.git"
+    "url": "git+https://github.com/sunxi1997/sx-event.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/sunxi1997/wx-mini-program-event/issues"
+    "url": "https://github.com/sunxi1997/sx-event/issues"
   },
-  "homepage": "https://github.com/sunxi1997/wx-mini-program-event#readme"
+  "homepage": "https://github.com/sunxi1997/sx-event#readme"
 }
