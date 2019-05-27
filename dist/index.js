@@ -78,4 +78,33 @@ export default class Event {
          return err(2, `没有找到${eventName}事件`)
    }
 
+   /**
+    * @method  $once - 绑定一个一次性的事件回调
+    *
+    * @param {String} eventName - 要监听的事件名称
+    * @param {Function} func   -  要绑定的回调函数
+    *
+    * @return Object
+    */
+   $once(eventName, func) {
+      // 参数验证
+      if (typeof eventName !== 'string')
+         return err(1, '第一个参数（事件名称）必须为 string')
+      else if (typeof func !== 'function')
+         return err(1, '第二个参数（回调函数）必须为 function')
+
+
+      let callback = ()=>{
+         func.call(this);
+         this.$off(eventName,callback);
+         eventName=null;
+         callback=null;
+         func=null;
+      };
+      
+      this.$on(eventName,callback)
+
+      return err(0, `为${eventName}绑定了一个一次性回调,${eventName} 事件当前回调总数：${this.hash[eventName].length}`)
+   }
+
 };
